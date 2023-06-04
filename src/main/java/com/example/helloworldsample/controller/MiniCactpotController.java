@@ -14,17 +14,21 @@ public class MiniCactpotController {
 
 	@Autowired
 	public MiniCactpotController(PayoutRepository repository) {
-        this.repository = repository;
+		this.repository = repository;
 	}
 
 	@GetMapping("/")
 	public String home(@RequestParam(name="name", required=false,defaultValue="World") String name, Model model) {
 		var payoutList = repository.findAll();
 
-        for (var payout : payoutList) {
-            System.out.println(String.format("%d : %d : %d", payout.getId(), payout.getSum(), payout.getMgp()));
-        }
+		for (var payout : payoutList) {
+			System.out.println(String.format("%d : %d : %d", payout.getId(), payout.getSum(), payout.getMgp()));
+		}
 
-        return "home";
+		model.addAttribute("payoutList", payoutList);
+
+		System.out.println(model.toString());
+
+		return "home";
 	}
 }
