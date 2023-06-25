@@ -7,22 +7,47 @@
 <body>
     <p th:text="'Hello, ' + ${name} + '!'" />
 
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>sum</th>
-                <th>mgp</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="payout:${payoutList}" th:object="${payout}">
-                <td th:text="*{id}"></td>
-                <td th:text="*{sum}"></td>
-                <td th:text="*{mgp}"></td>
-            </tr>
-        </tbody>
-    </table>
+    <div>
+        <!-- tableの回り込み制御 → align="left" ?? todo -->
+        <table align="left">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>sum</th>
+                    <th>mgp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="payout:${payoutList1}" th:object="${payout}">
+                    <td th:text="*{id}"></td>
+                    <td th:text="*{sum}"></td>
+                    <td th:text="*{mgp}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- tableのマージン制御 → style="width: 100px;" ?? todo -->    
+    <div style="width: 100px;"></div>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>sum</th>
+                    <th>mgp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="payout:${payoutList2}" th:object="${payout}">
+                    <td th:text="*{id}"></td>
+                    <td th:text="*{sum}"></td>
+                    <td th:text="*{mgp}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>
