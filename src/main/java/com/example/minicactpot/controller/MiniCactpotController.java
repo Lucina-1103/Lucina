@@ -1,38 +1,18 @@
-package com.example.helloworldsample.controller;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+package com.example.minicactpot.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.helloworldsample.repository.PayoutRepository;
-import com.example.helloworldsample.service.MiniCactpotService;
+import com.example.minicactpot.service.MiniCactpotService;
 
 import lombok.RequiredArgsConstructor;
-
-import com.example.helloworldsample.entity.PayoutEntity;
-import org.springframework.data.domain.Sort;
 
 @Controller
 @RequiredArgsConstructor
 public class MiniCactpotController {
 	private final MiniCactpotService miniCactpotService;
-
-	private final PayoutRepository repository;
-
-	// 1 ～ 9のリスト作成 todo:service化
-	private static final List<Integer> NUMBER_LIST;
-	static {
-		var list = new ArrayList<Integer>();
-		for (int i = 1; i <= 9; i++) {
-			list.add(i);
-		}
-		NUMBER_LIST = Collections.unmodifiableList(list);
-	}
 
 	@GetMapping("/")
 	public String home(@RequestParam(name="name", required=false,defaultValue="World") String name, Model model) {
