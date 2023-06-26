@@ -1,4 +1,4 @@
-package com.example.helloworldsample.service;
+package com.example.minicactpot.service;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,8 +7,8 @@ import java.util.List;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.example.helloworldsample.entity.PayoutEntity;
-import com.example.helloworldsample.repository.PayoutRepository;
+import com.example.minicactpot.entity.PayoutEntity;
+import com.example.minicactpot.repository.PayoutRepository;
 
 import lombok.RequiredArgsConstructor;
 

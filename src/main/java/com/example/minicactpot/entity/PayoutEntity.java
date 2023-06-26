@@ -1,4 +1,4 @@
-package com.example.helloworldsample.entity;
+package com.example.minicactpot.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
